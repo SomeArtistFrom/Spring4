@@ -27,17 +27,12 @@ public class UserDaoImp implements UserDao {
       return query.getResultList();
    }
 
-}
-//   @Override
-//   public void addCars(Car car) {
-//      sessionFactory.getCurrentSession().save(car);
-//   }
-//
-//   @Override
-//   @SuppressWarnings("unchecked")
-//   public List<Car> listCars() {
-//      TypedQuery<Car> query=sessionFactory.getCurrentSession().createQuery("from Car");
-//      return query.getResultList();
-//   }
+
+   @Override
+   public void add(Car car) {
+      sessionFactory.getCurrentSession().save(car);
+   }
+
+   }
 
 

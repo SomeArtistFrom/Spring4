@@ -11,9 +11,7 @@ public interface UserDao {
 
     List<User> listUsers();
 
+    void add(Car car);
 
-//        void addCars(Car car);
-//
-//    List<Car> listCars();
 
 }

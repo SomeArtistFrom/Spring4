@@ -15,29 +15,23 @@ public class MainApp {
                 new AnnotationConfigApplicationContext(AppConfig.class);
 
         UserService userService = context.getBean(UserService.class);
-      // UserService userService2 = context.getBean(UserService.class);
-       // Car car = new Car("Lada", 16543001);
 
-        userService.add(new User("User1", "Lastname1", "user1@mail.ru"));
-        userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
-        userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
-        userService.add(new User("User4", "Lastname4", "user4@mail.ru"));
+        //       userService.add(new User("User1", "Lastname1", "user1@mail.ru"));
+//        userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
+//        userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
+//        userService.add(new User("User4", "Lastname4", "user4@mail.ru"));
 
-        //userService.add(n);
+        Car car1 = new Car("Lada", 16543001);
+        Car car2 = new Car("Skoda", 54738282);
 
-//        userService2.addCars(new Car("Lada", 16543001));
-//        userService2.addCars(new Car("Scoda Octavia", 543289252));
-//        userService2.addCars(new Car("Bus", 543288790));
-//        userService2.addCars(new Car("Kia Rio", 1200075111));
+        User user1 = new User("First", "Lastname1", "user1@mail.ru");
+        User user2 = new User("Second", "Lastname2", "user2@mail.ru");
 
-       // userService.addCars(Lada);
-//        List<Car> cars = userService.listCars();
-//        for (Car car : cars) {
-//            System.out.println("Id = " + car.getId());
-//            System.out.println("Model = " + car.getModel());
-//            System.out.println("Serial = " + car.getSeries());
-//            System.out.println();
-//        }
+        user1.setCar(car1);
+        user2.setCar(car2);
+
+        userService.add(user1);
+        userService.add(user2);
 
         List<User> users = userService.listUsers();
         for (User user : users) {
@@ -45,12 +39,9 @@ public class MainApp {
             System.out.println("First Name = " + user.getFirstName());
             System.out.println("Last Name = " + user.getLastName());
             System.out.println("Email = " + user.getEmail());
+            System.out.println("Car = " + user.getCar());
             System.out.println();
         }
-//      if  (users.contains("User1")){
-//          int x =users.indexOf("User1");
-//          users.add();
-//      }
 
         System.out.println("==");
         context.close();
