@@ -10,6 +10,5 @@ public interface UserService {
 
     List<User> listUsers();
 
-   void add(Car car);
-
+    void findUser(Car car);
 }

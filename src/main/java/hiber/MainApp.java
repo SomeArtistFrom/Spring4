@@ -16,16 +16,11 @@ public class MainApp {
 
         UserService userService = context.getBean(UserService.class);
 
-        //       userService.add(new User("User1", "Lastname1", "user1@mail.ru"));
-//        userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
-//        userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
-//        userService.add(new User("User4", "Lastname4", "user4@mail.ru"));
-
-        Car car1 = new Car("Lada", 16543001);
-        Car car2 = new Car("Skoda", 54738282);
-
-        User user1 = new User("First", "Lastname1", "user1@mail.ru");
-        User user2 = new User("Second", "Lastname2", "user2@mail.ru");
+        Car car1 = new Car("Kia Rio", 16543001);
+        Car car2 = new Car("Skoda Octavia", 54738282);
+        Car car3 = new Car("Lada", 6353);
+        User user1 = new User("Inna", "Polovinchik", "user1@mail.ru");
+        User user2 = new User("Irina", "Vyu", "user2@mail.ru");
 
         user1.setCar(car1);
         user2.setCar(car2);
@@ -39,9 +34,13 @@ public class MainApp {
             System.out.println("First Name = " + user.getFirstName());
             System.out.println("Last Name = " + user.getLastName());
             System.out.println("Email = " + user.getEmail());
-            System.out.println("Car = " + user.getCar());
+            System.out.println("Car = " + user.getCar().toString());
             System.out.println();
         }
+
+        userService.findUser(car1);
+        userService.findUser(car2);
+        userService.findUser(car3);
 
         System.out.println("==");
         context.close();
